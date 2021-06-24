@@ -23,10 +23,10 @@ $mail->SMTPAuth = true;
 $mail->Username = 'maksymrylskyi@gmail.com'; // email
 $mail->Password = 'A4a>%^cqPYVd^E{E'; // password
 $mail->setFrom('maksymrylskyi@gmail.com', 'Сайт про Максима Рильського'); // From email and name
-$actuallname = $_POST["name"];
-$mail->addAddress($_POST["email"], $actuallname); // to email and name
+$actuallname = $arr["name"];
+$mail->addAddress($arr["email"], $actuallname); // to email and name
 $mail->Subject = 'Ваше питання щодо Максима Рильського. Ми незабаром обробимо його';
-$mail->msgHTML($_POST["message"].' Ваш номер ---'.$_POST["phone"]); //$mail->msgHTML(file_get_contents('contents.html'), DIR); //Read an HTML message body from an external file, convert referenced images to embedded,
+$mail->msgHTML($arr["type"].' Ваш номер ---'.$arr["phone"]); //$mail->msgHTML(file_get_contents('contents.html'), DIR); //Read an HTML message body from an external file, convert referenced images to embedded,
 $mail->AltBody = 'Сталася технічна помилка, відправте ще раз, будь ласка.'; // If html emails is not supported by the receiver, show this body
 // $mail->addAttachment('images/phpmailer_mini.png'); //Attach an image file
 $mail->SMTPOptions = array(
