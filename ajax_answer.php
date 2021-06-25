@@ -1,7 +1,5 @@
 <?php
-  // Преобразуем JSON-данные в массив
-  $arr = json_decode($_POST['json'], true);
-
+$arr = json_decode($_REQUEST['json'], true);
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -20,11 +18,10 @@ $mail->Host = "smtp.gmail.com"; // use $mail->Host = gethostbyname('smtp.gmail.c
 $mail->Port = 587; // TLS only
 $mail->SMTPSecure = 'tls'; // ssl is deprecated
 $mail->SMTPAuth = true;
-$mail->Username = 'maksymrylskyi@gmail.com'; // email
-$mail->Password = 'A4a>%^cqPYVd^E{E'; // password
+$mail->Username = ''; // email
+$mail->Password = ''; // password
 $mail->setFrom('maksymrylskyi@gmail.com', 'Сайт про Максима Рильського'); // From email and name
-$actuallname = $arr["name"];
-$mail->addAddress($arr["email"], $actuallname); // to email and name
+$mail->addAddress($arr["email"], $arr['name']); // to email and name
 $mail->Subject = 'Ваше питання щодо Максима Рильського. Ми незабаром обробимо його';
 $mail->msgHTML($arr["type"].' Ваш номер ---'.$arr["phone"]); //$mail->msgHTML(file_get_contents('contents.html'), DIR); //Read an HTML message body from an external file, convert referenced images to embedded,
 $mail->AltBody = 'Сталася технічна помилка, відправте ще раз, будь ласка.'; // If html emails is not supported by the receiver, show this body
@@ -36,15 +33,10 @@ $mail->SMTPOptions = array(
                         'allow_self_signed' => true
                     )
                 );
-/*if(!$mail->send()){
-    echo "Mailer Error: " . $mail->ErrorInfo;
+if($mail->send()){
+    echo "Cпасибо за ваш заказ!";
 }else{
-    echo "Message sent!";
-}*/
-
-if(!$mail->send()){
-    echo "alert('Сталася помилка, будь ласка, повторіть запит.')";
-}else{
-    echo "alert('Прекрасно! Ваш лист надійшов.')";
+    echo "Увы, произошла ошибка при отправке электрнного письма.";
 }
+
 
