@@ -1,42 +1,49 @@
 <?php
-$arr = json_decode($_REQUEST['json'], true);
+declare(strict_types = 1);
+
+include_once 'credentials.php'; 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-
+$arr = json_decode($_REQUEST['json'], true);
 require './mail/Exception.php';
 require './mail/PHPMailer.php';
 require './mail/SMTP.php';
 
 
-$mail = new PHPMailer;
-$mail->CharSet = "utf-8";
-
-$mail->isSMTP();
-
-$mail->SMTPDebug = 0; // 0 = off (for production use) - 1 = client messages - 2 = client and server messages
-$mail->Host = "smtp.gmail.com"; // use $mail->Host = gethostbyname('smtp.gmail.com'); // if your network does not support SMTP over IPv6
-$mail->Port = 587; // TLS only
-$mail->SMTPSecure = 'tls'; // ssl is deprecated
-$mail->SMTPAuth = true;
-$mail->Username = ''; // email
-$mail->Password = ''; // password
-$mail->setFrom('maksymrylskyi@gmail.com', 'Сайт про Максима Рильського'); // From email and name
-$mail->addAddress($arr["email"], $arr['name']); // to email and name
-$mail->Subject = 'Ваше питання щодо Максима Рильського. Ми незабаром обробимо його';
-$mail->msgHTML($arr["type"].' Ваш номер ---'.$arr["phone"]); //$mail->msgHTML(file_get_contents('contents.html'), DIR); //Read an HTML message body from an external file, convert referenced images to embedded,
-$mail->AltBody = 'Сталася технічна помилка, відправте ще раз, будь ласка.'; // If html emails is not supported by the receiver, show this body
-// $mail->addAttachment('images/phpmailer_mini.png'); //Attach an image file
-$mail->SMTPOptions = array(
-                    'ssl' => array(
-                        'verify_peer' => false,
-                        'verify_peer_name' => false,
-                        'allow_self_signed' => true
+function write_email(string $to, string $subject, string $text, string $name): bool
+{
+    $mail = new PHPMailer;
+    $mail->CharSet = "utf-8";
+    $mail->isSMTP();
+    $mail->SMTPDebug = 0; // 0 = off (for production use) - 1 = client messages - 2 = client and server messages
+    $mail->Host = "smtp.gmail.com"; // use $mail->Host = gethostbyname('smtp.gmail.com'); // if your network does not support SMTP over IPv6
+    $mail->Port = 587; // TLS only
+    $mail->SMTPSecure = 'tls'; // ssl is deprecated
+    $mail->SMTPAuth = true;
+    $mail->Username = EMAIL; // email
+    $mail->Password = EMAIL_PASSWORD; // password
+    $mail->setFrom(EMAIL, 'Сергей из New Vision Photo'); // From email and name
+    $mail->addAddress($to, $name); // to email and name
+    $mail->Subject = $subject;
+    $mail->msgHTML($text);
+    $mail->AltBody = 'Произошла ошибка, попробуйте указать другой адрес.'; // If html emails is not supported by the receiver, show this body
+    $mail->SMTPOptions = array(
+        'ssl' => array(
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true
                     )
                 );
-if($mail->send()){
-    echo "Cпасибо за ваш заказ!";
-}else{
-    echo "Увы, произошла ошибка при отправке электрнного письма.";
+    if($mail->send()){
+        return true;
+    }else{
+        return false;
+    }
 }
 
-
+$to_customer = write_email($arr['email'], 'Заказ фотосессии', 'Спасибо за ваш заказ!', $arr['name']);
+$to_him = write_email('maksymrylskyi@gmail.com', 'Заказ фотосессии', 'Имя: '.$arr['name'].'<br>'.' Кoмментарий: '.$arr['type'].'<br>'.' Адрес: '.$arr['email'].'<br>'.' Телефон: '.$arr['phone'], '');
+if($to_customer && $to_him)
+    echo 'Ваше письмо с заказом отправлено.';
+else 
+    echo 'Произошла ошибка при отправке электронного письма.';
