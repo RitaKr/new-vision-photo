@@ -41,13 +41,8 @@ function write_email(string $to, string $subject, string $text, string $name): b
     }
 }
 
-<<<<<<< Updated upstream
 $to_customer = write_email($arr['email'], 'New Vision Photo Заказ фотосессии', 'Спасибо за ваш выбор! Я свяжусь с вами в ближайшее время для согласования деталей фотосессии', $arr['name']);
 $to_him = write_email('nvphotosergey@gmail.com', 'Заказ фотосессии', 'Имя: '.$arr['name'].'<br>'.' Заказ: '.$arr['type'].'<br>'.' Адрес: '.$arr['email'].'<br>'.' Телефон: '.$arr['phone'], '');
-=======
-$to_customer = write_email($arr['email'], 'New Vision Photo Заказ фотосессии', 'Спасибо за ваш выбор! Я свяжусь с вами в ближайшее время для согласования деталей фотосессии. Хорошего настроения!', $arr['name']);
-$to_him = write_email('nvphotosergey@gmail.com', 'Заказ фотосессии', 'Имя: '.$arr['name'].'<br>'.' Кoмментарий: '.$arr['type'].'<br>'.' Адрес: '.$arr['email'].'<br>'.' Телефон: '.$arr['phone'], '');
->>>>>>> Stashed changes
 if($to_customer && $to_him)
     echo 'Ваше письмо с заказом отправлено.';
 else 
