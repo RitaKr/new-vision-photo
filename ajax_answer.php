@@ -22,7 +22,7 @@ function write_email(string $to, string $subject, string $text, string $name): b
     $mail->SMTPAuth = true;
     $mail->Username = EMAIL; // email
     $mail->Password = EMAIL_PASSWORD; // password
-    $mail->setFrom(EMAIL, 'Сергей из New Vision Photo'); // From email and name
+    $mail->setFrom(EMAIL, 'Сергей New Vision Photo'); // From email and name
     $mail->addAddress($to, $name); // to email and name
     $mail->Subject = $subject;
     $mail->msgHTML($text);
@@ -41,8 +41,8 @@ function write_email(string $to, string $subject, string $text, string $name): b
     }
 }
 
-$to_customer = write_email($arr['email'], 'Заказ фотосессии', 'Спасибо за ваш заказ!', $arr['name']);
-$to_him = write_email('maksymrylskyi@gmail.com', 'Заказ фотосессии', 'Имя: '.$arr['name'].'<br>'.' Кoмментарий: '.$arr['type'].'<br>'.' Адрес: '.$arr['email'].'<br>'.' Телефон: '.$arr['phone'], '');
+$to_customer = write_email($arr['email'], 'New Vision Photo Заказ фотосессии', 'Спасибо за ваш выбор! Я свяжусь с вами в ближайшее время для согласования деталей фотосессии. Хорошего настроения', $arr['name']);
+$to_him = write_email('nvphotosergey@gmail.com', 'Заказ фотосессии', 'Имя: '.$arr['name'].'<br>'.' Кoмментарий: '.$arr['type'].'<br>'.' Адрес: '.$arr['email'].'<br>'.' Телефон: '.$arr['phone'], '');
 if($to_customer && $to_him)
     echo 'Ваше письмо с заказом отправлено.';
 else 
