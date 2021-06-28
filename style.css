@@ -877,9 +877,9 @@ section .form-container .contactForm .formBox .inputBox input[type="submit"] {
 @media screen and (max-width: 720px) {
     header {
         width: 100%;
-        height: 50vh;
+        height: 40vh;
         
-        background-position: 60% 50%;
+        background-position: 70% 50%;
         background-repeat: no-repeat;
         background-size: cover ;
         background-blend-mode:normal;
@@ -890,7 +890,7 @@ section .form-container .contactForm .formBox .inputBox input[type="submit"] {
         transition: 1s ease;
     }
     header div {
-        height: 50vh;
+        height: 40vh;
         width: 70%;
         padding: 5%;
         display: flex;
