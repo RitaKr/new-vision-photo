@@ -228,7 +228,7 @@ ion-icon {
 }
 #img2-3 {
     grid-area: img2-3;
-    background-image: url(images/portfolio/portrait/3.webp);
+    background-image: url(images/portfolio/portrait/19.webp);
 }
 #img2-4 {
     grid-area: img2-4;
@@ -354,6 +354,116 @@ ion-icon {
     
 }
 
+
+
+
+#gal4 {
+    
+    grid-template-areas: 
+    'img4-1 img4-1 img4-1 img4-2 img4-2 img4-4'
+    'img4-1 img4-1 img4-1 img4-3 img4-3 img4-4'
+    'img4-8 img4-8 img4-7 img4-7 img4-6 img4-6'
+    'img4-9 img4-21 img4-22 img4-22 img4-10 img4-10'
+    'img4-9 img4-11 img4-11 img4-5 img4-10 img4-10'
+    'img4-12 img4-12 img4-13 img4-5 img4-14 img4-15'
+    'img4-12 img4-12 img4-17 img4-17 img4-18 img4-18';
+
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0;
+}
+
+#img4-1 {
+    grid-area: img4-1;
+    min-height: 515px;
+    background-image: url(images/portfolio/landscape/20.webp);
+}
+#img4-2 {
+    grid-area: img4-2;
+    background-image: url(images/portfolio/landscape/2.webp);
+}
+#img4-3 {
+    grid-area: img4-3;
+    background-image: url(images/portfolio/landscape/19.webp);
+}
+#img4-4 {
+    grid-area: img4-4;
+    min-height: 515px;
+    background-image: url(images/portfolio/landscape/23.webp);
+}
+#img4-5 {
+    grid-area: img4-5;
+    min-height: 515px;
+    background-image: url(images/portfolio/landscape/11.webp);
+}
+#img4-6 {
+    grid-area: img4-6;
+    background-image: url(images/portfolio/landscape/10.webp);
+}
+#img4-7 {
+    grid-area: img4-7;
+    background-image: url(images/portfolio/landscape/7.webp);
+}
+#img4-8 {
+    grid-area: img4-8;
+    
+    background-image: url(images/portfolio/landscape/5.webp);
+}
+#img4-9 {
+    grid-area: img4-9;
+    min-height: 515px;
+    background-image: url(images/portfolio/landscape/14.webp);
+}
+#img4-10 {
+    grid-area: img4-10;
+    min-height: 515px;
+    background-image: url(images/portfolio/landscape/24.webp);
+}
+#img4-11 {
+    grid-area: img4-11;
+
+    background-image: url(images/portfolio/landscape/12.webp);
+}
+#img4-12 {
+    grid-area: img4-12;
+    min-height: 515px;
+    background-image: url(images/portfolio/landscape/1.webp);
+}
+#img4-13 {
+    grid-area: img4-13;
+    background-image: url(images/portfolio/landscape/15.webp);
+}
+#img4-14 {
+    grid-area: img4-14;
+    
+    background-image: url(images/portfolio/landscape/21.webp);
+}
+#img4-15 {
+    grid-area: img4-15;
+    
+    background-image: url(images/portfolio/landscape/18.webp);
+}
+#img4-16 {
+    grid-area: img4-16;
+    background-image: url(images/portfolio/landscape/16.webp);
+}
+#img4-17 {
+    grid-area: img4-17;
+    
+    background-image: url(images/portfolio/landscape/3.webp);
+}
+#img4-18 {
+    grid-area: img4-18;
+    background-image: url(images/portfolio/landscape/9.webp);
+}
+#img4-21 {
+    grid-area: img4-21;
+    background-image: url(images/portfolio/landscape/22.webp);
+}
+#img4-22 {
+    grid-area: img4-22;
+    
+}
 @media screen and (max-width: 1020px) {
     #gal1 {
         display: grid;
@@ -404,13 +514,33 @@ ion-icon {
         'img3-4 img3-4 img3-4 img3-7 img3-7 img3-7';
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 0;
     }
+
+    #gal4 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 15px;
+        grid-template-areas: 
+        'img4-1 img4-1 img4-1 img4-2 img4-2 img4-2'
+        'img4-1 img4-1 img4-1 img4-3 img4-3 img4-3'
+        'img4-15 img4-15 img4-15 img4-7 img4-7 img4-7'
+        'img4-4 img4-6 img4-6 img4-6 img4-5 img4-5'
+        'img4-17 img4-17 img4-17 img4-17 img4-5 img4-5'
+        'img4-11 img4-11 img4-22 img4-22 img4-8 img4-8'
+        
+        'img4-12 img4-12 img4-12 img4-10 img4-10 img4-10'
+        'img4-12 img4-12 img4-12 img4-10 img4-10 img4-10'
+        'img4-9 img4-9 img4-13 img4-13 img4-18 img4-18'
+        'img4-9 img4-9 img4-21 img4-14 img4-14 img4-14';
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr ;
+    }
     .image-gallery a {
         height: 220px;
         
     }
     
     #img-9, #img-8, #img-17, #img-14,
-    #img2-4 {
+    #img2-4, 
+    #img4-2, #img4-3,#img4-7, #img4-8,#img4-4, #img4-7, #img4-14, #img4-11,#img4-15 {
         min-height: 220px;
         
     }
@@ -418,7 +548,8 @@ ion-icon {
      
     #img-1,
     #img2-1,#img2-15,#img2-10,#img2-9,
-    #img3-1,#img3-3,#img3-5,#img3-6 {
+    #img3-1,#img3-3,#img3-5,#img3-6,
+    #img4-1,#img4-9, #img4-5,#img4-10, #img4-12 {
         min-height: 455px;
     }
 }
@@ -514,19 +645,53 @@ ion-icon {
         
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 0;
     }
+    #gal4 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 15px;
+        grid-template-areas: 
+        'img4-1 img4-1 img4-1 img4-1 img4-1 img4-1'
+        'img4-1 img4-1 img4-1 img4-1 img4-1 img4-1'
+        'img4-1 img4-1 img4-1 img4-1 img4-1 img4-1'
+        'img4-2 img4-2 img4-2 img4-2 img4-2 img4-2 '
+        
+        'img4-21 img4-21 img4-10 img4-10 img4-10 img4-10 '
+        
+        'img4-5 img4-5 img4-10 img4-10 img4-10 img4-10 '
+        'img4-5 img4-5 img4-8 img4-8 img4-8 img4-8 '
+        
+        'img4-17 img4-17 img4-17 img4-17 img4-17 img4-17'
+        'img4-22 img4-22 img4-22 img4-22 img4-4 img4-4'
+        'img4-9 img4-9 img4-9 img4-9 img4-4 img4-4'
+        'img4-9 img4-9 img4-9 img4-9 img4-15 img4-15'
+        'img4-6 img4-6 img4-6 img4-6 img4-6 img4-6'
+        
+        'img4-18 img4-18 img4-18 img4-7 img4-7 img4-7'
+        'img4-12 img4-12 img4-12 img4-12 img4-13 img4-13'
+        'img4-12 img4-12 img4-12 img4-12 img4-3 img4-3'
+        'img4-14 img4-14 img4-14 img4-11 img4-11 img4-11'
+        
+        ;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
     .image-gallery a {
         height: 160px;
     }
     #img-8,
-    #img3-4, #img3-7
+    #img3-4, #img3-7,
+    #img4-2, #img4-3,#img4-7, #img4-8,#img4-4, #img4-7, #img4-14, #img4-11,#img4-15,#img4-21
      {
         min-height: 160px;
         
     }
     #img-1, #img-8, #img-9, #img-4, #img-17, #img-14, #img-19, #img-16, #img-6, 
     #img2-1, #img2-13,#img2-15, #img2-9, #img2-7, #img2-10, #img2-4, #img2-14, #img2-21,
-    #img3-1, #img3-3, #img3-5, #img3-6 {
+    #img3-1, #img3-3, #img3-5, #img3-6,
+     #img4-9,  #img4-10, #img4-4, #img4-5, #img4-12 {
         min-height: 335px;
+    }
+    #img4-1 {
+        min-height: 510px;
     }
     #gallery h3:after {
         display: none;
