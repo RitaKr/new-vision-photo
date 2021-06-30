@@ -464,6 +464,90 @@ ion-icon {
     grid-area: img4-22;
     
 }
+
+#gal5 {
+    grid-template-areas: 
+    'img5-1 img5-1 img5-1 img5-13 img5-12 img5-8'
+    'img5-1 img5-1 img5-1 img5-4 img5-7 img5-8'
+    'img5-3 img5-3 img5-22 img5-22 img5-6 img5-10'
+    'img5-3 img5-3 img5-2 img5-5 img5-11 img5-11'
+    ;
+
+    
+    grid-template-rows: 1fr 1fr 1fr 1fr 0fr;
+}
+#img5-1 {
+    grid-area: img5-1;
+    min-height: 515px;
+    background-image: url(images/portfolio/else/1.webp);
+}
+#img5-2 {
+    grid-area: img5-2;
+    
+    background-image: url(images/portfolio/else/2.webp);
+}
+#img5-3 {
+    grid-area: img5-3;
+    min-height: 515px;
+    background-image: url(images/portfolio/else/3.webp);
+}
+#img5-4 {
+    grid-area: img5-4;
+    
+    background-image: url(images/portfolio/else/4.webp);
+}
+#img5-5 {
+    grid-area: img5-5;
+    
+    background-image: url(images/portfolio/else/5.webp);
+}
+#img5-6 {
+    grid-area: img5-6;
+    
+    background-image: url(images/portfolio/else/6.webp);
+}
+#img5-7 {
+    grid-area: img5-7;
+    background-image: url(images/portfolio/else/7.webp);
+}
+#img5-8 {
+    grid-area: img5-8;
+    min-height: 515px;
+    background-image: url(images/portfolio/else/8.webp);
+}
+#img5-9 {
+    grid-area: img5-9;
+    
+    background-image: url(images/portfolio/else/9.webp);
+}
+#img5-10 {
+    grid-area: img5-10;
+    
+    background-image: url(images/portfolio/else/10.webp);
+}
+#img5-11 {
+    grid-area: img5-11;
+    
+    background-image: url(images/portfolio/else/11.webp);
+}
+#img5-12 {
+    grid-area: img5-12;
+    
+    background-image: url(images/portfolio/else/12.webp);
+}
+#img5-13 {
+    grid-area: img5-13;
+    background-image: url(images/portfolio/else/13.webp);
+}
+#img5-22 {
+    grid-area: img5-22;
+    
+}
+
+
+
+
+
 @media screen and (max-width: 1020px) {
     #gal1 {
         display: grid;
@@ -533,6 +617,18 @@ ion-icon {
         'img4-9 img4-9 img4-21 img4-14 img4-14 img4-14';
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr ;
     }
+    #gal5 {
+        grid-template-areas: 
+        'img5-1 img5-1 img5-1 img5-1 img5-8 img5-8'
+        'img5-1 img5-1 img5-1 img5-1 img5-8 img5-8'
+        'img5-13 img5-13 img5-4 img5-4 img5-2 img5-2'
+        'img5-3 img5-3 img5-22 img5-22 img5-2 img5-2'
+        'img5-3 img5-3 img5-5 img5-5 img5-7 img5-7'
+        'img5-6 img5-12 img5-12 img5-11 img5-11 img5-10';
+    
+        
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 0fr;
+    }
     .image-gallery a {
         height: 220px;
         
@@ -549,7 +645,8 @@ ion-icon {
     #img-1,
     #img2-1,#img2-15,#img2-10,#img2-9,
     #img3-1,#img3-3,#img3-5,#img3-6,
-    #img4-1,#img4-9, #img4-5,#img4-10, #img4-12 {
+    #img4-1,#img4-9, #img4-5,#img4-10, #img4-12,
+    #img5-1,#img5-3, #img5-8, #img5-2 {
         min-height: 455px;
     }
 }
@@ -674,6 +771,28 @@ ion-icon {
         ;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     }
+
+    #gal5 {
+        grid-template-areas: 
+        'img5-1 img5-1 img5-1 img5-1 img5-1 img5-1'
+        'img5-1 img5-1 img5-1 img5-1 img5-1 img5-1'
+        'img5-3 img5-3 img5-3 img5-3 img5-5 img5-5'
+        'img5-3 img5-3 img5-3 img5-3 img5-8 img5-8'
+        'img5-22 img5-22 img5-22 img5-22 img5-8 img5-8'
+        'img5-7 img5-7 img5-4 img5-4 img5-4 img5-4'
+        'img5-12 img5-12 img5-4 img5-4 img5-4 img5-4'
+        'img5-10 img5-10 img5-10 img5-6 img5-6 img5-6'
+        'img5-10 img5-10 img5-10 img5-6 img5-6 img5-6'
+        'img5-11 img5-11 img5-2 img5-2 img5-2 img5-2'
+        'img5-13 img5-13 img5-2 img5-2 img5-2 img5-2'
+        
+        ;
+    
+        
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+
     .image-gallery a {
         height: 160px;
     }
@@ -687,7 +806,8 @@ ion-icon {
     #img-1, #img-8, #img-9, #img-4, #img-17, #img-14, #img-19, #img-16, #img-6, 
     #img2-1, #img2-13,#img2-15, #img2-9, #img2-7, #img2-10, #img2-4, #img2-14, #img2-21,
     #img3-1, #img3-3, #img3-5, #img3-6,
-     #img4-9,  #img4-10, #img4-4, #img4-5, #img4-12 {
+     #img4-9,  #img4-10, #img4-4, #img4-5, #img4-12,
+    #img5-1, #img5-2, #img5-4, #img5-8, #img5-3, #img5-6, #img5-10  {
         min-height: 335px;
     }
     #img4-1 {

@@ -21,7 +21,7 @@ h1, h2 {
 
 header {
     width: 100%;
-    height: 110vh;
+    height: 800px;
     
     
     background-position: top;
@@ -35,7 +35,7 @@ header {
     transition: 1s ease;
 }
 header div {
-    height: 100vh;
+    height: 700px;
     padding: 5%;
     display: flex;
     flex-direction: column;
@@ -44,6 +44,7 @@ header div {
     z-index: 10;
 
 }
+
 header div h1, header div h3 {
     z-index: 10;
     transition: 1s ease;
@@ -51,7 +52,9 @@ header div h1, header div h3 {
 header div h1 {
     font-size: 56px;
 }
-
+#camicon {
+    width: 32px;
+}
 header div h3 {
     font-weight: lighter;
     font-size: 1em;
@@ -71,8 +74,8 @@ header::before {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 35vw;
-    height: 250vh;
+    width: 470px;
+    height: 1750px;
     transform: rotate(-45deg) translate(-54%, 25%);
     
     background: var(--c1);
@@ -890,8 +893,8 @@ section .form-container .contactForm .formBox .inputBox input[type="submit"] {
         transition: 1s ease;
     }
     header div {
-        height: 40vh;
-        width: 70%;
+        height: 100%;
+        width: 50%;
         padding: 5%;
         display: flex;
         flex-direction: column;
@@ -905,9 +908,12 @@ section .form-container .contactForm .formBox .inputBox input[type="submit"] {
         transition: 1s ease;
     }
     header div h1 {
-        /*font-size: 24px;*/
+        font-size: 42px;
     }
     
+    #camicon {
+        width: 24px;
+    }
     header div h3 {
         font-weight: lighter;
         font-size: 1em;
